@@ -1,0 +1,239 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  STUDENT
+  OWNER
+  BARBER
+  ADMIN
+}
+
+enum BarberStatus {
+  AVAILABLE
+  BUSY
+  BREAK
+  OFFLINE
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum QueueStatus {
+  WAITING
+  IN_SERVICE
+  COMPLETED
+  SKIPPED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum NotificationType {
+  BOOKING
+  QUEUE
+  PAYMENT
+  SYSTEM
+}
+
+model User {
+  id             String         @id @default(uuid())
+  name           String?
+  email          String         @unique
+  role           UserRole       @default(STUDENT)
+  phone          String?
+  avatarUrl      String?
+  ownedSalons    Salon[]        @relation("SalonOwner")
+  bookings       Booking[]
+  queueEntries   QueueEntry[]
+  notifications  Notification[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([role])
+  @@map("users")
+}
+
+model Salon {
+  id             String         @id @default(uuid())
+  name           String
+  slug           String         @unique
+  description    String?
+  address        String
+  city           String         @default("Delhi")
+  latitude       Decimal?       @db.Decimal(10, 7)
+  longitude      Decimal?       @db.Decimal(10, 7)
+  ownerId        String
+  owner          User           @relation("SalonOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  images         String[]       @default([])
+  isVerified     Boolean        @default(false)
+  isActive       Boolean        @default(true)
+  rating         Decimal        @default(0) @db.Decimal(3, 2)
+  barbers        Barber[]
+  services       Service[]
+  bookings       Booking[]
+  queueEntries   QueueEntry[]
+  schedules      SalonSchedule[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([ownerId])
+  @@index([city, isActive, isVerified])
+  @@map("salons")
+}
+
+model Barber {
+  id             String         @id @default(uuid())
+  salonId        String
+  salon          Salon          @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  name           String
+  status         BarberStatus   @default(AVAILABLE)
+  specialties    String[]       @default([])
+  avatarUrl      String?
+  services       Service[]      @relation("BarberServices")
+  bookings       Booking[]
+  schedules      BarberSchedule[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([salonId, status])
+  @@map("barbers")
+}
+
+model Service {
+  id             String         @id @default(uuid())
+  salonId        String
+  salon          Salon          @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  name           String
+  duration       Int
+  price          Int
+  isActive       Boolean        @default(true)
+  barbers        Barber[]       @relation("BarberServices")
+  bookings       Booking[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([salonId, isActive])
+  @@map("services")
+}
+
+model Booking {
+  id             String         @id @default(uuid())
+  userId         String
+  salonId        String
+  barberId       String?
+  serviceId      String
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  salon          Salon          @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  barber         Barber?        @relation(fields: [barberId], references: [id], onDelete: SetNull)
+  service        Service        @relation(fields: [serviceId], references: [id])
+  status         BookingStatus  @default(PENDING)
+  scheduledTime  DateTime
+  paymentStatus  PaymentStatus  @default(PENDING)
+  queueEntry     QueueEntry?
+  payment        Payment?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([userId, status])
+  @@index([salonId, scheduledTime])
+  @@index([barberId, scheduledTime])
+  @@map("bookings")
+}
+
+model QueueEntry {
+  id             String         @id @default(uuid())
+  salonId        String
+  userId         String?
+  bookingId      String?        @unique
+  salon          Salon          @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  user           User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  booking        Booking?       @relation(fields: [bookingId], references: [id], onDelete: SetNull)
+  guestName      String?
+  position       Int
+  estimatedWait  Int
+  status         QueueStatus    @default(WAITING)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([salonId, status, position])
+  @@index([userId, status])
+  @@map("queue_entries")
+}
+
+model Notification {
+  id             String           @id @default(uuid())
+  userId         String
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type           NotificationType
+  message        String
+  readStatus     Boolean          @default(false)
+  createdAt      DateTime         @default(now())
+
+  @@index([userId, readStatus])
+  @@map("notifications")
+}
+
+model Payment {
+  id             String         @id @default(uuid())
+  bookingId      String         @unique
+  booking        Booking        @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  amount         Int
+  status         PaymentStatus  @default(PENDING)
+  gateway        String         @default("razorpay")
+  gatewayOrderId String?
+  gatewayPaymentId String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([status, gateway])
+  @@map("payments")
+}
+
+model SalonSchedule {
+  id             String         @id @default(uuid())
+  salonId        String
+  salon          Salon          @relation(fields: [salonId], references: [id], onDelete: Cascade)
+  dayOfWeek      Int
+  opensAt        String
+  closesAt       String
+  breakStart     String?
+  breakEnd       String?
+  slotDuration   Int            @default(15)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@unique([salonId, dayOfWeek])
+  @@map("salon_schedules")
+}
+
+model BarberSchedule {
+  id             String         @id @default(uuid())
+  barberId       String
+  barber         Barber         @relation(fields: [barberId], references: [id], onDelete: Cascade)
+  dayOfWeek      Int
+  startsAt       String
+  endsAt         String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@unique([barberId, dayOfWeek])
+  @@map("barber_schedules")
+}

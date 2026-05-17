@@ -1,0 +1,1022 @@
+# THE BIG GUY
+
+# Complete Product Features & Page Architecture Document
+
+### Smart Salon Appointment Booking & Live Queue Management Platform
+
+### Product UX/Feature Specification Document
+
+---
+
+# 1. PRODUCT OVERVIEW
+
+## What is THE BIG GUY?
+
+THE BIG GUY is a modern operational SaaS platform designed specifically for solving salon crowd management problems in high-density student areas near:
+
+* colleges
+* universities
+* hostels
+* coaching centers
+* PG areas
+* urban student hubs
+
+The platform combines:
+
+* appointment booking
+* live queue tracking
+* barber management
+* operational dashboards
+* smart scheduling
+* real-time queue intelligence
+
+into a single mobile-first operational ecosystem.
+
+Unlike luxury salon apps, THE BIG GUY focuses on:
+
+* speed
+* efficiency
+* low waiting times
+* operational simplicity
+* high customer throughput
+* business optimization
+
+---
+
+# 2. CORE PRODUCT GOALS
+
+## Main Objectives
+
+### 1. Reduce Waiting Time
+
+Students should not waste 1–2 hours waiting physically inside salons.
+
+### 2. Enable Pre-Booking
+
+Users can reserve slots before arriving.
+
+### 3. Manage Crowded Queues
+
+Salon owners can handle peak traffic smoothly.
+
+### 4. Improve Barber Efficiency
+
+Barbers receive organized customer flow.
+
+### 5. Reduce No-Shows
+
+Commitment fee system prevents fake bookings.
+
+### 6. Create Real-Time Transparency
+
+Customers always know:
+
+* queue position
+* estimated wait
+* booking status
+* barber availability
+
+---
+
+# 3. BRAND & DESIGN SYSTEM
+
+# Brand Personality
+
+The UI communicates:
+
+* operational speed
+* startup-quality execution
+* modern SaaS maturity
+* reliability
+* efficiency
+* student-focused simplicity
+
+---
+
+# Visual Identity
+
+## Primary Colors
+
+### Black / Deep Navy
+
+Used for:
+
+* dashboards
+* app backgrounds
+* operational UI
+
+### Warm Yellow
+
+Used for:
+
+* CTA buttons
+* highlights
+* active states
+* booking actions
+
+### White
+
+Used for:
+
+* typography
+* information hierarchy
+
+### Green
+
+Used for:
+
+* queue success
+* open status
+* confirmation states
+
+---
+
+# Typography Style
+
+The typography is:
+
+* bold
+* minimal
+* startup-inspired
+* highly readable
+* modern sans-serif
+
+Large hero headlines emphasize:
+
+* speed
+* urgency
+* operational convenience
+
+Examples:
+
+* Skip The Queue
+* Save Your Time
+* Book Before You Arrive
+
+---
+
+# 4. LANDING PAGE FEATURES
+
+# Purpose of Landing Page
+
+The landing page is designed to instantly communicate:
+
+* why the product exists
+* how it solves waiting problems
+* why students need it
+* why salon owners benefit
+
+The entire landing page follows a:
+
+* mobile-first
+* startup-style
+* operational SaaS structure
+
+---
+
+# HERO SECTION
+
+## Features
+
+### Large Startup Headline
+
+Primary messaging:
+
+* Skip The Queue
+* Save Your Time
+
+### Supporting Description
+
+Explains:
+
+* live queue tracking
+* booking before arrival
+* student convenience
+
+### CTA Buttons
+
+Primary:
+
+* Book Salon Now
+
+Secondary:
+
+* Watch How It Works
+
+### Trust Indicators
+
+Includes:
+
+* student avatars
+* live bookings count
+* active salons
+* ratings
+
+### Mobile App Preview
+
+Interactive phone mockup displaying:
+
+* nearby salons
+* queue tracking
+* booking flow
+* real-time availability
+
+---
+
+# Nearby Salon Preview Section
+
+## Purpose
+
+Allows students to quickly discover salons nearby.
+
+## Features Included
+
+### Salon Card Components
+
+Each salon card displays:
+
+* salon image
+* salon name
+* location
+* wait time
+* barber count
+* queue size
+* operational status
+* next available slot
+* rating
+* CTA button
+
+### Status Indicators
+
+Examples:
+
+* OPEN NOW
+* LOW WAIT
+* BUSY
+* LIVE
+
+### Booking Actions
+
+* Book Now
+* Join Queue
+* Track Queue
+
+---
+
+# HOW IT WORKS SECTION
+
+## Booking Journey Steps
+
+### Step 1 — Discover Salon
+
+Users search nearby salons.
+
+### Step 2 — Select Service
+
+Choose:
+
+* haircut
+* beard trim
+* hair spa
+* combo services
+
+### Step 3 — Choose Barber
+
+Users can:
+
+* view barber availability
+* ratings
+* queue load
+
+### Step 4 — Pay Commitment Fee
+
+Small payment secures slot.
+
+### Step 5 — Booking Confirmation
+
+Queue position generated.
+
+### Step 6 — Arrive On Time
+
+User receives live notifications.
+
+---
+
+# STUDENT BENEFITS SECTION
+
+## Main Benefits
+
+### Skip Long Queues
+
+No physical waiting required.
+
+### Better Time Management
+
+Students book before class breaks.
+
+### Real-Time Queue Tracking
+
+Users know exact waiting position.
+
+### Faster Service Access
+
+Operational scheduling improves speed.
+
+### Trusted Salon Discovery
+
+Ratings and reviews increase confidence.
+
+---
+
+# SALON OWNER BENEFITS SECTION
+
+## Main Business Advantages
+
+### Reduce Crowd Chaos
+
+Avoid overcrowded waiting areas.
+
+### Improve Customer Flow
+
+Bookings become organized.
+
+### Reduce No-Shows
+
+Commitment fee increases reliability.
+
+### Better Barber Utilization
+
+Balanced customer allocation.
+
+### Operational Insights
+
+Owners receive analytics and queue visibility.
+
+---
+
+# 5. AUTHENTICATION SYSTEM
+
+# Login Page
+
+## Features
+
+### Email Login
+
+Secure email/password system.
+
+### Phone Login
+
+OTP-based authentication.
+
+### Social Login Placeholder
+
+Future integration:
+
+* Google
+* Apple
+* Facebook
+
+### Password Visibility Toggle
+
+Improves usability.
+
+### Validation States
+
+Shows:
+
+* invalid credentials
+* loading states
+* success states
+
+---
+
+# Signup Page
+
+## Features
+
+### User Type Selection
+
+Users select:
+
+* Student
+* Salon Owner
+* Barber
+
+### Mobile-Friendly Form UX
+
+Optimized for one-hand typing.
+
+### Verification Flow
+
+OTP verification after signup.
+
+---
+
+# OTP Verification Page
+
+## Features
+
+### OTP Input Boxes
+
+Smooth digit-by-digit interaction.
+
+### Timer Countdown
+
+Shows OTP expiration.
+
+### Resend OTP
+
+Operational retry flow.
+
+---
+
+# 6. STUDENT APPLICATION EXPERIENCE
+
+# Student Home Page
+
+## Main Purpose
+
+Quick salon discovery and booking.
+
+---
+
+# Search System
+
+## Features
+
+### Search by:
+
+* salon
+* area
+* service
+* barber
+
+### Location-Based Discovery
+
+Nearby salons prioritized.
+
+---
+
+# Filter System
+
+## Available Filters
+
+### Open Now
+
+Only active salons.
+
+### Lowest Wait
+
+Shortest queue first.
+
+### Highest Rated
+
+Best-reviewed salons.
+
+### Recommended
+
+AI-based suggestions.
+
+### Recently Visited
+
+Quick rebooking behavior.
+
+---
+
+# Salon Card UX
+
+## Each Card Includes
+
+### Operational Information
+
+* wait time
+* queue size
+* barber count
+
+### Business Information
+
+* salon name
+* ratings
+* location
+
+### Booking CTA
+
+Fast one-click booking.
+
+---
+
+# Salon Details Page
+
+# Main Sections
+
+## Salon Banner
+
+Large visual branding section.
+
+## Salon Information
+
+Displays:
+
+* address
+* timings
+* operational status
+
+## Services Section
+
+Service cards include:
+
+* duration
+* price
+* popularity
+* estimated wait
+
+## Barber Profiles
+
+Shows:
+
+* specialties
+* active/inactive status
+* queue load
+* next free slot
+
+## Queue Status
+
+Live operational queue visibility.
+
+## Reviews Placeholder
+
+Future customer feedback system.
+
+---
+
+# 7. BOOKING FLOW
+
+# Step-by-Step Booking Process
+
+---
+
+# Step 1 — Select Service
+
+Users choose:
+
+* haircut
+* beard trim
+* combo package
+
+Each card shows:
+
+* duration
+* pricing
+* popularity
+
+---
+
+# Step 2 — Choose Barber
+
+Users view:
+
+* barber ratings
+* specialties
+* availability
+* queue load
+
+---
+
+# Step 3 — Select Date
+
+Interactive calendar system.
+
+Supports:
+
+* future booking
+* blocked dates
+* holidays
+
+---
+
+# Step 4 — Select Time Slot
+
+## Features
+
+### Smart Slot Suggestions
+
+Recommended based on:
+
+* queue load
+* barber availability
+
+### Dynamic Availability
+
+Slots update in real time.
+
+---
+
+# Step 5 — Booking Summary
+
+Displays:
+
+* salon details
+* service
+* barber
+* timing
+* estimated wait
+
+---
+
+# Step 6 — Commitment Fee Payment
+
+## Purpose
+
+Reduce fake bookings and no-shows.
+
+### Payment Features
+
+Future integration:
+
+* UPI
+* Razorpay
+* Paytm
+* Stripe
+
+---
+
+# Step 7 — Booking Success
+
+## Success Screen Includes
+
+* booking ID
+* QR code
+* timing
+* salon address
+* barber assigned
+* queue position
+
+---
+
+# 8. LIVE QUEUE TRACKING SYSTEM
+
+# Purpose
+
+Allows students to monitor queue progress remotely.
+
+Inspired by:
+
+* Uber tracking
+* Swiggy delivery tracking
+
+---
+
+# Features
+
+## Queue Position
+
+Displays:
+
+* current position
+* people ahead
+
+## Estimated Wait Time
+
+AI-calculated waiting estimate.
+
+## Barber Status
+
+Shows:
+
+* active barber
+* current service progress
+
+---
+
+# Queue Timeline
+
+## Stages
+
+1. Booking Confirmed
+2. In Queue
+3. Almost Your Turn
+4. Barber Ready
+5. Service Started
+6. Completed
+
+---
+
+# Notifications
+
+Users receive:
+
+* almost your turn alerts
+* delay notifications
+* cancellation alerts
+
+---
+
+# 9. BOOKINGS PAGE
+
+# Tabs
+
+## Upcoming
+
+Future reservations.
+
+## Completed
+
+Booking history.
+
+## Cancelled
+
+Cancelled appointments.
+
+---
+
+# Booking Card Features
+
+Each card contains:
+
+* salon name
+* barber
+* service
+* timing
+* queue status
+* payment status
+
+---
+
+# Quick Actions
+
+## Rebook
+
+Instant repeat booking.
+
+## Cancel
+
+Cancel reservation.
+
+## Track Queue
+
+View live status.
+
+---
+
+# 10. OWNER DASHBOARD
+
+# Purpose
+
+Acts as:
+
+* operational control center
+* lightweight business OS
+
+---
+
+# Dashboard Widgets
+
+## Today Bookings
+
+Daily appointment count.
+
+## Active Queue
+
+Current waiting customers.
+
+## Active Barbers
+
+Working staff count.
+
+## No-Shows
+
+Operational losses tracking.
+
+## Peak Hours
+
+Rush-time intelligence.
+
+## Revenue Placeholder
+
+Future financial analytics.
+
+---
+
+# Queue Management Page
+
+## Features
+
+### Next Customer
+
+Advance queue quickly.
+
+### Mark Completed
+
+Finish appointment.
+
+### Delay Customer
+
+Handle timing changes.
+
+### Pause Queue
+
+Emergency operational control.
+
+---
+
+# Barber Management Page
+
+## Features
+
+### Add/Edit Barber
+
+Manage staff.
+
+### Availability Controls
+
+Set working hours.
+
+### Break Timings
+
+Operational scheduling.
+
+### Assigned Services
+
+Specialty-based assignment.
+
+---
+
+# Service Management Page
+
+## Features
+
+### Create Service
+
+Add new offerings.
+
+### Pricing Management
+
+Update rates.
+
+### Duration Settings
+
+Optimize slot timing.
+
+---
+
+# Slot Management Page
+
+## Features
+
+### Opening Hours
+
+Salon operational schedule.
+
+### Holidays
+
+Blocked dates.
+
+### Dynamic Slot Generation
+
+Automatic availability creation.
+
+---
+
+# 11. BARBER DASHBOARD
+
+# Purpose
+
+Simple operational interface for busy barbers.
+
+---
+
+# Features
+
+## Current Customer
+
+Displays active appointment.
+
+## Next Customer
+
+Upcoming client visibility.
+
+## Queue Preview
+
+Remaining workload.
+
+## Break Toggle
+
+Pause availability.
+
+---
+
+# 12. NOTIFICATION SYSTEM
+
+# Notification Types
+
+## Booking Confirmed
+
+Successful reservation.
+
+## Almost Your Turn
+
+Prepare to arrive.
+
+## Queue Delayed
+
+Updated waiting estimate.
+
+## Payment Successful
+
+Commitment fee completed.
+
+---
+
+# Notification UI Types
+
+## Toast Notifications
+
+Small temporary alerts.
+
+## Push Notifications
+
+Mobile operational updates.
+
+## Email Placeholders
+
+Transactional communication system.
+
+---
+
+# 13. REUSABLE COMPONENT SYSTEM
+
+# Core Components
+
+## Navigation
+
+* Navbar
+* Mobile bottom navigation
+* Sidebar
+
+## Cards
+
+* Salon cards
+* Queue cards
+* Booking cards
+* Barber cards
+
+## Inputs
+
+* OTP inputs
+* date pickers
+* slot selectors
+
+## Operational Components
+
+* queue indicators
+* progress bars
+* status badges
+
+---
+
+# 14. FUTURE SCALABILITY
+
+# Planned Expansion
+
+## Multi-City Operations
+
+Scale across India.
+
+## Multi-Tenant Architecture
+
+Support multiple salons/franchises.
+
+## Real-Time WebSockets
+
+Live operational syncing.
+
+## AI Recommendations
+
+Smart salon suggestions.
+
+## Analytics Platform
+
+Business intelligence dashboards.
+
+## Subscription Management
+
+SaaS monetization layer.
+
+---
+
+# 15. FINAL PRODUCT CONCLUSION
+
+THE BIG GUY successfully positions itself as:
+
+“A modern operational startup platform for managing high-density student salon traffic through live queue intelligence and frictionless booking.”
+
+The platform combines:
+
+* startup-grade UX
+* operational dashboards
+* mobile-first design
+* scalable SaaS architecture
+* real-time queue systems
+* student-focused efficiency
+
+into a practical production-ready ecosystem optimized for crowded Indian salon environments.
