@@ -32,6 +32,7 @@ For the practical one-salon launch flow, read:
 - [One-Salon MVP Guide](./docs/ONE_SALON_MVP.md)
 - [Supabase Setup Guide](./docs/SUPABASE_SETUP.md)
 - [Deployment Guide](./docs/DEPLOYMENT_GUIDE.md)
+- [Vercel Environment Variables](./docs/VERCEL_ENV_VARIABLES.md)
 
 1. Install dependencies:
 
